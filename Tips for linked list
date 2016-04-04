@@ -2,4 +2,4 @@
 For most beginner in C, linked list can be annoying. Memory errors are easily caused if you don't pay 100 percent attention. Today I'd like to share with you about some tips for linked list.
 
 ### Drawing graphs
-![linked list](https://github.com/ECer23/Pictures/blob/master/linkedlist.png?raw=true)
+![Assert a node](https://raw.githubusercontent.com/ECer23/Pictures/master/linkedlist.png "Figure 1")
