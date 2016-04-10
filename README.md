@@ -3,7 +3,8 @@ It's about my C study, including C and Cpp.
 It's somthing like a bog.  
 
 ### Reading Catalogue
-2016 4/7 [Some instructions for git](https://github.com/ECer23/C-Study/issues/3)  
+2016/4/10 [Sort that using pointers](https://github.com/ECer23/C-Study/issues/4)  
+2016/4/7 [Some instructions for git](https://github.com/ECer23/C-Study/issues/3)  
 2016/4/5 [Tips for linked list](https://github.com/ECer23/C-Study/issues/2)  
 
 ### Contact me  
