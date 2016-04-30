@@ -69,3 +69,5 @@ bool cmp(string a, string b) {
     return a+b > b+a;
 }
 ```
+
+You can view raw code in [C-Study](https://github.com/ECer23/C-Study/tree/master/beauty_coding)
