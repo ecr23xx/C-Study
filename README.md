@@ -4,7 +4,7 @@ It's somthing like a bog.
 If you wanna know more about my learning process, you can go to my blog before：[Ecr23](https://www.zybuluo.com/Ecr23/note/296472#rd) (I stopped updating in Jan. 2016, and articles in it are almost about C)  
 
 ### Reading Catalogue
-2016/05/05 [OOP Singleton Pattern](https://github.com/ECer23/C-Study/issues/7)
+2016/05/05 [OOP Singleton Pattern](https://github.com/ECer23/C-Study/issues/7)  
 2016/04/29 [Beauty_coding](https://github.com/ECer23/C-Study/issues/6)  
 2016/04/26 [OOP design principles](https://github.com/ECer23/C-Study/issues/5)  
 2016/04/17 [Sort algorithms for linked list](https://github.com/ECer23/C-Study/issues/4)  
