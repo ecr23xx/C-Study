@@ -1,0 +1,121 @@
+1
+9 9 5 7 3 9 4 8 9
+19
+9 8 8 7 4 9 4 4 2 10 3 7 9 4 2 4 8 1 3
+ptjubxnmculeqogr
+
+Standard answer's stdout output:
+   +---------------------------------------------------------------------
+   |---------- test_MP ----------
+   |MaxPathValue: 25
+   |
+   |---------- test_HFM ----------
+   |# TEST_1
+   |Weight = 1; Code = 100101
+   |Weight = 2; Code = 100100
+   |Weight = 2; Code = 11001
+   |Weight = 3; Code = 11000
+   |Weight = 3; Code = 10011
+   |Weight = 4; Code = 00111
+   |Weight = 4; Code = 00110
+   |Weight = 4; Code = 00101
+   |Weight = 4; Code = 00100
+   |Weight = 4; Code = 1101
+   |Weight = 7; Code = 1000
+   |Weight = 7; Code = 0111
+   |Weight = 8; Code = 0110
+   |Weight = 8; Code = 0101
+   |Weight = 8; Code = 0100
+   |Weight = 9; Code = 0001
+   |Weight = 9; Code = 0000
+   |Weight = 9; Code = 111
+   |Weight = 10; Code = 101
+   |Huffman's codeLength = 435
+   |
+   |TEST_2
+   |(b) Weight = 1; Code = 1101
+   |(c) Weight = 1; Code = 1100
+   |(e) Weight = 1; Code = 1011
+   |(g) Weight = 1; Code = 1010
+   |(j) Weight = 1; Code = 1001
+   |(l) Weight = 1; Code = 1000
+   |(m) Weight = 1; Code = 0111
+   |(n) Weight = 1; Code = 0110
+   |(o) Weight = 1; Code = 0101
+   |(p) Weight = 1; Code = 0100
+   |(q) Weight = 1; Code = 0011
+   |(r) Weight = 1; Code = 0010
+   |(t) Weight = 1; Code = 0001
+   |(x) Weight = 1; Code = 0000
+   |(u) Weight = 2; Code = 111
+   |Huffman's codeLength = 62
+   |Origin Text: ptjubxnmculeqogr
+   |Huffman's Code: 01000001100111111010000011001111100111100010110011010110100010
+   |
+   +---------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+1
+5 8 2 9 8 8 1 5 6
+18
+1 2 9 5 9 10 8 1 8 1 7 2 3 10 5 4 8 5
+mvdpxgctdpebqzapvvpami
+Standard answer's stdout output:
+    +---------------------------------------------------------------------
+    |---------- test_MP ----------
+    |MaxPathValue: 22
+    |
+    |---------- test_HFM ----------
+    |# TEST_1
+    |Weight = 1; Code = 0001001
+    |Weight = 1; Code = 0001000
+    |Weight = 1; Code = 011001
+    |Weight = 2; Code = 011000
+    |Weight = 2; Code = 000101
+    |Weight = 3; Code = 01101
+    |Weight = 4; Code = 00011
+    |Weight = 5; Code = 1001
+    |Weight = 5; Code = 1000
+    |Weight = 5; Code = 0111
+    |Weight = 7; Code = 0101
+    |Weight = 8; Code = 0100
+    |Weight = 8; Code = 0011
+    |Weight = 8; Code = 0010
+    |Weight = 9; Code = 0000
+    |Weight = 9; Code = 111
+    |Weight = 10; Code = 110
+    |Weight = 10; Code = 101
+    |Huffman's codeLength = 386
+    |
+    |TEST_2
+    |(b) Weight = 1; Code = 1111
+    |(c) Weight = 1; Code = 1110
+    |(e) Weight = 1; Code = 1101
+    |(g) Weight = 1; Code = 1100
+    |(i) Weight = 1; Code = 1011
+    |(q) Weight = 1; Code = 1010
+    |(t) Weight = 1; Code = 1001
+    |(x) Weight = 1; Code = 1000
+    |(z) Weight = 1; Code = 0101
+    |(a) Weight = 2; Code = 0100
+    |(d) Weight = 2; Code = 0001
+    |(m) Weight = 2; Code = 0000
+    |(v) Weight = 3; Code = 011
+    |(p) Weight = 4; Code = 001
+    |Huffman's codeLength = 81
+    |Origin Text: mvdpxgctdpebqzapvvpami
+    |Huffman's Code: 000001100010011000110011101001000100111011111101001010100001011011001010000001011
+    |
+    +---------------------------------------------------------------------
+
+The difference:
