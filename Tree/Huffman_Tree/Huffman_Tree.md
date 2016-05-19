@@ -98,4 +98,4 @@ Huffman's codeLength = 81
 ------------
 ```
 
-You can view the source code at [Huffman tree]()
+You can view the source code at [Huffman tree](https://github.com/ECer23/C-Study/tree/master/Tree/Huffman_Tree)  
