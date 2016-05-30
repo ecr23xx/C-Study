@@ -1,0 +1,60 @@
+bool BinarySearchTree::deleteNode(int x) {
+  Node** temp = &root;
+  while ((*temp) != NULL) {  // find x
+    if (x > (*temp)->val) temp = &((*temp)->right);
+    else if (x == (*temp)->val) break;
+    else temp = &((*temp)->left);
+  }
+  if ((*temp) == NULL) return (false);  // find failed
+  // leaf
+  if ((*temp)->left == NULL && (*temp)->right == NULL) {
+    delete (*temp);
+    *temp = NULL;
+    return (true);
+  // inner-point
+  } else if ((*temp)->left != NULL && (*temp)->right != NULL) {
+    Node** p = temp;
+    while ((*p)->left != NULL)
+      p = &((*p)->left);
+    (*temp)->val = (*p)->val;
+    if ((*p)->right != NULL) {
+
+    }
+    delete (*p);
+    *p = NULL;
+    return (true);
+  } else if ((*temp)->left != NULL) {
+    Node* p = root;
+    while (p->left->val != x && p->right->val != x) {
+      if (x > p->val) p = p->right;
+      else if (x == p->val) break;
+      else p = p->left;
+    }
+    if (p->left->val == x) {
+      p->left = (*temp)->left;
+      delete (*temp);
+      (*temp) = NULL;
+    } else if (p->right->val == x) {
+      p->right = (*temp)->left;
+      delete (*temp);
+      (*temp) = NULL;
+    }
+    return (true);
+  } else {
+    Node* p = root;
+    while (p->left->val != x && p->right->val != x) {
+      if (x > p->val) p = p->right;
+      else if (x == p->val) break;
+      else p = p->left;
+    }
+    if (p->left->val == x) {
+      p->left = (*temp)->right;
+      delete (*temp);
+      (*temp) = NULL;
+    } else if (p->right->val == x) {
+      p->right = (*temp)->right;
+      delete (*temp);
+      (*temp) = NULL;
+    }
+  }
+}

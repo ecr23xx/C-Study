@@ -1,0 +1,199 @@
+MAZE:
+
+#include <cmath>
+#include <iostream>
+#include <queue>
+using namespace std;
+
+struct point {
+  int x;
+  int y;
+  char c;
+};
+
+point maze[21][21];
+point gamestart;
+queue<point> q;
+int step[21][21] = {};
+
+void BFS(point start) {
+  int flag[21][21] = {};
+  queue<point> q;
+  q.push(start);
+  while (q.front().c != 'E') {
+    int x = q.front().x;
+    int y = q.front().y;
+    flag[x][y] = 1;
+    if (x + 1 < 21) {
+      if (maze[x + 1][y].c != '#' && maze[x + 1][y].c != '!' &&
+          flag[x + 1][y] != 1) {
+        q.push(maze[x + 1][y]);
+        flag[x + 1][y] = 1;
+        step[x + 1][y] = step[x][y] + 1;
+      }
+    }
+    if (x - 1 >= 0) {
+      if (maze[x - 1][y].c != '#' && maze[x - 1][y].c != '!' &&
+          flag[x - 1][y] != 1) {
+        q.push(maze[x - 1][y]);
+        flag[x - 1][y] = 1;
+        step[x - 1][y] = step[x][y] + 1;
+      }
+    }
+    if (y + 1 < 21) {
+      if (maze[x][y + 1].c != '#' && maze[x][y + 1].c != '!' &&
+          flag[x][y + 1] != 1) {
+        q.push(maze[x][y + 1]);
+        flag[x][y + 1] = 1;
+        step[x][y + 1] = step[x][y] + 1;
+      }
+    }
+    if (y - 1 >= 0) {
+      if (maze[x][y - 1].c != '#' && maze[x][y - 1].c != '!' &&
+          flag[x][y - 1] != 1) {
+        q.push(maze[x][y - 1]);
+        flag[x][y - 1] = 1;
+        step[x][y - 1] = step[x][y] + 1;
+      }
+    }
+    q.pop();
+    if (q.size() == 0) {
+      cout << "-1" << endl;
+      return;
+    }
+  }
+  cout << step[q.front().x][q.front().y] << endl;
+}
+
+int main() {
+  int rows, cols;
+  cin >> rows >> cols;
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
+      char temp;
+      cin >> temp;
+      maze[i][j].x = i;
+      maze[i][j].y = j;
+      maze[i][j].c = temp;
+      if (temp == 'S')
+        gamestart = maze[i][j];
+    }
+  }
+  BFS(gamestart);
+  return 0;
+}
+
+------------------------------------------
+------------------------------------------
+------------------------------------------
+------------------------------------------
+
+LEAST STEPS:
+
+#include <iostream>
+#include <queue>
+#include <string>
+using namespace std;
+
+struct point {
+  int x;
+  int y;
+  point(int _x, int _y) : x(_x), y(_y) {}
+  point() {}
+};
+
+point maze[8][8];
+
+void BFS(point start, point over) {
+  int step[8][8] = {};
+  int flag[8][8] = {};
+  queue<point> q;
+  q.push(start);
+  while (q.front().x != over.x || q.front().y != over.y) {
+    int x = q.front().x;
+    int y = q.front().y;
+    flag[x][y] = 1;
+    if (x + 2 < 8 && y + 1 < 8) {
+      if (flag[x + 2][y + 1] != 1) {
+        q.push(maze[x + 2][y + 1]);
+        flag[x + 2][y + 1] = 1;
+        step[x + 2][y + 1] = step[x][y] + 1;
+      }
+    }
+    if (x + 2 < 8 && y - 1 >= 0) {
+      if (flag[x + 2][y - 1] != 1) {
+        q.push(maze[x + 2][y - 1]);
+        flag[x + 2][y - 1] = 1;
+        step[x + 2][y - 1] = step[x][y] + 1;
+      }
+    }
+    if (x - 2 >= 0 && y + 1 < 8) {
+      if (flag[x - 2][y + 1] != 1) {
+        q.push(maze[x - 2][y + 1]);
+        flag[x - 2][y + 1] = 1;
+        step[x - 2][y + 1] = step[x][y] + 1;
+      }
+    }
+    if (x - 2 >= 0 && y - 1 >= 0) {
+      if (flag[x - 2][y - 1] != 1) {
+        q.push(maze[x - 2][y - 1]);
+        flag[x - 2][y - 1] = 1;
+        step[x - 2][y - 1] = step[x][y] + 1;
+      }
+    }
+    if (x - 1 >= 0 && y - 2 >= 0) {
+      if (flag[x - 1][y - 2] != 1) {
+        q.push(maze[x - 1][y - 2]);
+        flag[x - 1][y - 2] = 1;
+        step[x - 1][y - 2] = step[x][y] + 1;
+      }
+    }
+    if (x - 1 >= 0 && y + 2 < 8) {
+      if (flag[x - 1][y + 2] != 1) {
+        q.push(maze[x - 1][y + 2]);
+        flag[x - 1][y + 2] = 1;
+        step[x - 1][y + 2] = step[x][y] + 1;
+      }
+    }
+    if (x + 1 < 8 && y + 2 < 8) {
+      if (flag[x + 1][y + 2] != 1) {
+        q.push(maze[x + 1][y + 2]);
+        flag[x + 1][y + 2] = 1;
+        step[x + 1][y + 2] = step[x][y] + 1;
+      }
+    }
+    if (x + 1 < 8 && y - 2 >= 0) {
+      if (flag[x + 1][y - 2] != 1) {
+        q.push(maze[x + 1][y - 2]);
+        flag[x + 1][y - 2] = 1;
+        step[x + 1][y - 2] = step[x][y] + 1;
+      }
+    }
+    q.pop();
+    if (q.size() == 0) {
+      cout << "-1" << endl;
+      return;
+    }
+  }
+  cout << step[q.front().x][q.front().y] << endl;
+}
+
+int main() {
+  int testcase;
+  cin >> testcase;
+  while (testcase--) {
+    for (int i = 0; i < 8; i++) {
+      for (int j = 0; j < 8; j++) {
+        maze[i][j].x = i;
+        maze[i][j].y = j;
+      }
+    }
+    string a;
+    string b;
+    cin >> a >> b;
+    point start(a[0] - 'a', a[1] - '1');
+    point over(b[0] - 'a', b[1] - '1');
+    BFS(start, over);
+  }
+  return 0;
+}
