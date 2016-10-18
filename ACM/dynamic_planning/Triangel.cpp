@@ -77,9 +77,9 @@ int main() {
     }
   }
   cout << Maxsum(1, 1) << endl;
-  cout << Maxsum2() << endl;
-  cout << Maxsum3() << endl;
-  cout << Maxsum4() << endl;
+  // cout << Maxsum2() << endl;
+  // cout << Maxsum3() << endl;
+  // cout << Maxsum4() << endl;
 }
 
 /*

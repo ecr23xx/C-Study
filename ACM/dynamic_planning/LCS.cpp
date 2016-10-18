@@ -1,6 +1,7 @@
 /*
  * LCS.cpp
  * Longest Common Subsequence, LCS
+ * Source: POJ1458
  * Author: Ecr23
  * 2016-09-26
  */
