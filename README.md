@@ -4,6 +4,7 @@ It's somthing like a bog.
 If you wanna know more about my learning process, you can go to my blog before：[Ecr23](https://www.zybuluo.com/Ecr23/note/296472#rd) (I stopped updating in Jan. 2016, and articles in it are almost about C)  
 
 ### Reading Catalogue
+2016-Oct-30 [树的循环遍历](https://github.com/ECer23/C-Study/issues/15)
 2016-Oct-18 [动态规划 (1)](https://github.com/ECer23/C-Study/issues/14)  
 2016-Sep-12 [双栈排序](https://github.com/ECer23/C-Study/issues/13)  
 2016-Jul-16 [C++11 learning (2)] (https://github.com/ECer23/C-Study/issues/12)  

@@ -40,14 +40,6 @@ bool cmp(const HFM::Node *a, const HFM::Node *b) {
   }
 }
 
-// bool cmp2(const HFM::Node *a, const HFM::Node *b) {
-//   if ((a->w) < (b->w)) {
-//     return (true);
-//   } else if ((a->w) == (b->w)) {
-//     return ()
-//   }
-// }
-
 // output format
 bool h_cmp(const HFM::Node *a, const HFM::Node *b) {
   if ((a->w) < (b->w)) {
