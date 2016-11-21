@@ -1,21 +1,22 @@
 #include "BinarySearchTree.hpp"
-BinarySearchTree::BinarySearchTree() { root = NULL; }
+
+BinarySearchTree::BinarySearchTree() { root = nullptr; }
 BinarySearchTree::~BinarySearchTree() { this->clear(); }
 BinarySearchTree::Node *BinarySearchTree::getRoot() const { return root; }
 
 BinarySearchTree::BinarySearchTree(const std::vector<int> &vec) {
-  root = NULL;
+  root = nullptr;
   for (int i = 0; i < vec.size(); i++) {
     this->insertNode(vec[i]);
   }
 }
 
 bool BinarySearchTree::insertNode(int x) {
-  if (root == NULL) {
+  if (root == nullptr) {
     root = new Node(x);
   } else {
     Node **temp = &root;  // PLEASE USE pointer's pointer
-    while (*temp != NULL) {
+    while (*temp != nullptr) {
       if (x > (*temp)->val)
         temp = &((*temp)->right);
       else if (x == (*temp)->val)
@@ -28,39 +29,9 @@ bool BinarySearchTree::insertNode(int x) {
   return (true);
 }
 
-// bool BinarySearchTree::insertNode(int element) {
-//   Node *temp = root;
-//   if (temp == NULL) {
-//     temp = new Node(element);
-//     root = temp;
-//     return true;
-//   } else {
-//     while (temp != NULL) {
-//       if (temp->val == element) {
-//         return false;
-//       } else if (temp->val > element) {
-//         if (temp->left == NULL) {
-//           temp->left = new Node(element);
-//           return true;
-//         } else {
-//           temp = temp->left;
-//         }
-//       } else {
-//         if (temp->right == NULL) {
-//           temp->right = new Node(element);
-//           return true;
-//         } else {
-//           temp = temp->right;
-//         }
-//       }
-//     }
-//   }
-//   return false;
-// }
-
 bool BinarySearchTree::searchNode(int x) {
   Node *temp = root;  // begin with root
-  while (temp != NULL) {
+  while (temp != nullptr) {
     if (x > temp->val)  // bigger than root
       temp = temp->right;
     else if (x == temp->val)
@@ -68,12 +39,12 @@ bool BinarySearchTree::searchNode(int x) {
     else  // smaller than root
       temp = temp->left;
   }
-  return (false);  // temp turns to NULL shows searching failed
+  return (false);  // temp turns to nullptr shows searching failed
 }
 
 bool BinarySearchTree::deleteNode(int x) {
   Node **temp = &root;
-  while ((*temp) != NULL) {  // find x
+  while ((*temp) != nullptr) {  // find x
     if (x > (*temp)->val)
       temp = &((*temp)->right);
     else if (x == (*temp)->val)
@@ -81,33 +52,33 @@ bool BinarySearchTree::deleteNode(int x) {
     else
       temp = &((*temp)->left);
   }
-  if ((*temp) == NULL) return (false);  // find failed
+  if ((*temp) == nullptr) return (false);  // find failed
   // leaf
-  if ((*temp)->left == NULL && (*temp)->right == NULL) {
+  if ((*temp)->left == nullptr && (*temp)->right == nullptr) {
     delete (*temp);
-    *temp = NULL;
+    *temp = nullptr;
     return (true);
     // inner-point
     // here I choose the biggest one in temp's left-child
     // it's ok if you choose the smallest one in temp's right-child
-  } else if ((*temp)->left != NULL && (*temp)->right != NULL) {
+  } else if ((*temp)->left != nullptr && (*temp)->right != nullptr) {
     Node **p = &((*temp)->left);  // temp's left-child
-    while ((*p)->right != NULL)   // find the biggest one
+    while ((*p)->right != nullptr)   // find the biggest one
       p = &((*p)->right);
     (*temp)->val = (*p)->val;  // exchange its value
-    if ((*p)->left != NULL) {
+    if ((*p)->left != nullptr) {
       Node *q = (*p);
       (*p) = (*p)->left;  // don't forget its left-child if it had
       delete q;
     } else {
       delete (*p);
-      *p = NULL;  // set it to NULL or we'll meet conditional jump when
+      *p = nullptr;  // set it to nullptr or we'll meet conditional jump when
                   // traversal the tree
     }
     return (true);
   } else {  // it has only left-child or right-child
     Node *q = (*temp);
-    if ((*temp)->left != NULL) {
+    if ((*temp)->left != nullptr) {
       Node *q = (*temp);
       (*temp) = (*temp)->left;
     } else {
@@ -121,20 +92,20 @@ bool BinarySearchTree::deleteNode(int x) {
 // bool BinarySearchTree::deleteNode(int element) {
 //   Node *temp = root;
 //   Node *parent = root;
-//   while (temp != NULL) {
+//   while (temp != nullptr) {
 //     if (temp->val == element) {
 //       // delete element
-//       if (temp->left == NULL && temp->right == NULL) {
+//       if (temp->left == nullptr && temp->right == nullptr) {
 //         if (temp == root) {
-//           root = NULL;
-//           parent = NULL;
+//           root = nullptr;
+//           parent = nullptr;
 //         } else if (parent->left == temp) {
-//           parent->left = NULL;
+//           parent->left = nullptr;
 //         } else {
-//           parent->right = NULL;
+//           parent->right = nullptr;
 //         }
 //         delete temp;
-//       } else if (temp->left == NULL) {
+//       } else if (temp->left == nullptr) {
 //         if (temp == root) {
 //           root = temp->right;
 //         } else if (parent->left == temp) {
@@ -143,7 +114,7 @@ bool BinarySearchTree::deleteNode(int x) {
 //           parent->right = temp->right;
 //         }
 //         delete temp;
-//       } else if (temp->right == NULL) {
+//       } else if (temp->right == nullptr) {
 //         if (temp == root) {
 //           root = temp->left;
 //         } else if (parent->left == temp) {
@@ -155,7 +126,7 @@ bool BinarySearchTree::deleteNode(int x) {
 //       } else {
 //         Node *s = temp->left;
 //         Node *q = temp;
-//         while (s->right != NULL) {
+//         while (s->right != nullptr) {
 //           q = s;
 //           s = s->right;
 //         }
@@ -181,13 +152,13 @@ bool BinarySearchTree::deleteNode(int x) {
 
 // postorder traversal used for clear
 void postorder(BinarySearchTree::Node *node) {
-  if (node == NULL) {
+  if (node == nullptr) {
     return;
   } else {
     postorder(node->left);
     postorder(node->right);
     delete node;
-    node = NULL;
+    node = nullptr;
   }
 }
 
